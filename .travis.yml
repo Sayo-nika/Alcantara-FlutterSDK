@@ -1,0 +1,32 @@
+language: generic
+sudo: required
+
+install:
+  - sudo apt-get install libglfw3-dev libepoxy-dev libjsoncpp-dev libgtk-3-dev \
+    libx11-dev pkg-config
+  - cp -vRf flutter dist
+  - cp -vRf flutter-desktop-embedding dist
+
+script:
+  - cd dist 
+  - cd flutter-desktop-embedding/library/linux
+  - make
+    # I'm so sorry
+  - cd .. && cd .. && cd ..
+  - tar -zcvf AlcantaraFlutterSDK.tar.gz
+  - ls
+
+
+# This is where the actual releases happen. Travis has the ability to publish releases from GitHub, Amazon S3, OpenShift, etc.
+# Read on https://docs.travis-ci.com/user/deployment/releases/ to learn more
+# For this type of configuration, we're using the GitHub releases schema
+
+deploy:
+  provider: releases
+  api_key:
+    secure: $GITHUB_API_KEY
+  file_glob: true
+  file: "dist/AlcantaraFlutterSDK.tar.gz"
+  skip_cleanup: true
+  on:
+    tags: true
