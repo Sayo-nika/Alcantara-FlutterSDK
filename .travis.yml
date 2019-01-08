@@ -4,6 +4,7 @@ sudo: required
 install:
   - sudo apt-get install libglfw3-dev libepoxy-dev libjsoncpp-dev libgtk-3-dev \
     libx11-dev pkg-config
+  - mkdir dist
   - cp -vRf flutter dist
   - cp -vRf flutter-desktop-embedding dist
 
