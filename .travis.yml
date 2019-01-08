@@ -23,7 +23,7 @@ script:
   - make
     # I'm so sorry
   - cd .. && cd .. && cd .. && cd ..
-  - tar -zcvf AlcantaraFlutterSDK.tar.gz dist/ 
+  - tar -zcf AlcantaraFlutterSDK.tar.gz dist/ 
   - ls
 
 
