@@ -22,8 +22,8 @@ script:
   - cd flutter-desktop-embedding/library/linux
   - make
     # I'm so sorry
-  - cd .. && cd .. && cd ..
-  - tar -zcvf AlcantaraFlutterSDK.tar.gz . 
+  - cd .. && cd .. && cd .. && cd ..
+  - tar -zcvf AlcantaraFlutterSDK.tar.gz dist/ 
   - ls
 
 
@@ -36,7 +36,7 @@ deploy:
   api_key:
     secure: $GITHUB_API_KEY
   file_glob: true
-  file: "dist/AlcantaraFlutterSDK.tar.gz"
+  file: "./AlcantaraFlutterSDK.tar.gz"
   skip_cleanup: true
   on:
     tags: true
