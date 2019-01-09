@@ -22,7 +22,7 @@ script:
   - cd flutter-desktop-embedding/library/linux
   - make
     # I'm so sorry
-  - cd .. && cd .. && cd ..
+  - cd .. && cd .. && cd .. && cd ..
   - tar -zcf AlcantaraFlutterSDK.tar.gz -C dist/ . 
   - ls
 
