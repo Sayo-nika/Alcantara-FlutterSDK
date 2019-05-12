@@ -1,3 +1,6 @@
+# Flutter SDK now supports Desktop apps. This SDK is no longer maintained.
+
+
 # Flutter SDK for Alcantara
 
 This is a upstream Flutter SDK designed for Alcantara.
